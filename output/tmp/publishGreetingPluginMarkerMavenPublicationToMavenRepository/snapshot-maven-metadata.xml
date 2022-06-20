@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.projreport.greeting</groupId>
+  <artifactId>com.projreport.greeting.gradle.plugin</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20220618.152040</timestamp>
+      <buildNumber>22</buildNumber>
+    </snapshot>
+    <lastUpdated>20220618152040</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20220618.152040-22</value>
+        <updated>20220618152040</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

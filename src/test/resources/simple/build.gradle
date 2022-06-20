@@ -1,0 +1,29 @@
+plugins {
+    id 'com.projreport' version '1.0-SNAPSHOT'
+    id 'maven-publish'
+}
+
+group 'com.projreport'
+version '1.0-SNAPSHOT'
+description = 'test example'
+
+repositories {
+    mavenCentral()
+}
+
+
+producer {
+    outputFile = file("$buildDir/project-report.md")
+}
+
+
+producer.outputFile = file("$buildDir/project-report.md")
+
+
+publishing {
+    publications {
+        simple(MavenPublication) {
+            artifact textZip
+        }
+    }
+}

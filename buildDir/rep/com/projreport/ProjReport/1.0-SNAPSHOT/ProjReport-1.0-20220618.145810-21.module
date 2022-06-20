@@ -1,0 +1,60 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.projreport",
+    "module": "ProjReport",
+    "version": "1.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "ProjReport-1.0-SNAPSHOT.jar",
+          "url": "ProjReport-1.0-SNAPSHOT.jar",
+          "size": 6973,
+          "sha512": "ef88bd2612ffa8f72cf3cd19521a732c6ecb3758d83745f4f660399c75c51874091ff183679b8a6e6b54c831ff89f3e8791ce642331b0c0104d9430a6d6d7a98",
+          "sha256": "fee919d9a329badc5006adfb67f8f683da0bb1344f102af9b856b58f55de7727",
+          "sha1": "17eb011cbf2981384d494f19b59f420421fc044d",
+          "md5": "f8cb7ac4acb0e9329df8386f4686aaa8"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "ProjReport-1.0-SNAPSHOT.jar",
+          "url": "ProjReport-1.0-SNAPSHOT.jar",
+          "size": 6973,
+          "sha512": "ef88bd2612ffa8f72cf3cd19521a732c6ecb3758d83745f4f660399c75c51874091ff183679b8a6e6b54c831ff89f3e8791ce642331b0c0104d9430a6d6d7a98",
+          "sha256": "fee919d9a329badc5006adfb67f8f683da0bb1344f102af9b856b58f55de7727",
+          "sha1": "17eb011cbf2981384d494f19b59f420421fc044d",
+          "md5": "f8cb7ac4acb0e9329df8386f4686aaa8"
+        }
+      ]
+    }
+  ]
+}

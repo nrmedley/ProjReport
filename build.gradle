@@ -1,0 +1,78 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+    id 'java-library'
+    id 'project-report'
+}
+
+
+publishing{
+    repositories {
+        maven {
+            url="buildDir/reports"
+        }
+    }
+}
+
+group 'com.projreport'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+htmlDependencyReport {
+    projects = project.allprojects
+}
+htmlDependencyReport {
+    reports.html.destination = file("build/reports/project/dependencies")
+
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation('org.spockframework:spock-core:2.0-groovy-3.0') {
+        exclude group: 'org.codehaus.groovy'
+    }
+    testImplementation gradleTestKit()
+    implementation gradleApi()
+    implementation localGroovy()
+}
+
+gradlePlugin {
+    // Define the plugin
+    plugins {
+        projReportTasks {
+           id = 'com.projreport'
+            implementationClass = 'com.projreport.plugin.ProjReportPlugin'
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+def functionalTest = sourceSets.create('functionalTest')
+def functionalTestTask = tasks.register('functionalTest', Test) {
+    group = 'verification'
+    testClassesDirs = sourceSets.functionalTest.output.classesDirs
+    classpath = sourceSets.functionalTest.runtimeClasspath
+    useJUnitPlatform()
+}
+
+tasks.named("check") {
+    dependsOn functionalTestTask
+}
+
+gradlePlugin {
+    testSourceSets sourceSets.functionalTest
+}
+
+
+
+
+
+
