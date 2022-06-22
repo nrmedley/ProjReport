@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.projreport.plugin.ProjReportPluginTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-20T16:41:11" hostname="NRMEDLEY" time="1.36">
+<testsuite name="com.projreport.plugin.ProjReportPluginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-21T23:29:34" hostname="NRMEDLEY" time="1.777">
   <properties/>
-  <testcase name="hello world task prints hello world [gradleVersion: 7.x, #0]" classname="com.projreport.plugin.ProjReportPluginTest" time="0.145"/>
-  <testcase name="pluginRegistersGreetingTask()" classname="com.projreport.plugin.ProjReportPluginTest" time="1.174"/>
+  <testcase name="pluginRegistersProjectReportTask()" classname="com.projreport.plugin.ProjReportPluginTest" time="1.777"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

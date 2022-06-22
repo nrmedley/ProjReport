@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.projreport.plugin.BuildLogicFunctionalTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-20T16:41:07" hostname="NRMEDLEY" time="3.994">
-  <properties/>
-  <testcase name="hello world task prints hello world" classname="com.projreport.plugin.BuildLogicFunctionalTest" time="3.994"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,20 +1,19 @@
-
 package com.projreport.plugin
 
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
-import org.gradle.testkit.runner.BuildResult
-import org.gradle.testkit.runner.TaskOutcome
 import org.junit.jupiter.api.Test
 import org.gradle.testkit.runner.GradleRunner
 import static org.gradle.testkit.runner.TaskOutcome.*
 import spock.lang.TempDir
 import spock.lang.Specification
-
 import static org.junit.jupiter.api.Assertions.assertNotNull
 
+/**
+ * Unit testing for the plugin. TODO: generate a test report and compare the outputs of the report vs the plugin report
+ */
 class ProjReportPluginTest extends Specification {
-    @TempDir File testProjectDir
+/*    @TempDir File testProjectDir
     File settingsFile
     File buildFile
 
@@ -23,40 +22,43 @@ class ProjReportPluginTest extends Specification {
         buildFile = new File(testProjectDir, 'build.gradle')
     }
 
-    def "hello world task prints hello world"() {
+    def "print text"() {
         given:
         settingsFile << "rootProject.name = 'ProjReport'"
         buildFile << """
-            task greet {
-                doLast {
-                    println 'Hello world!'
-                }
-            }
+       ProjectReport{
+            output = project.getName() + ".md"
+            outputFile.set(project.layout.buildDirectory.file(output))
+       }
         """
 
         when:
         def result = GradleRunner.create()
                 .withProjectDir(testProjectDir)
-                .withArguments('greet')
+                .withPluginClasspath()
+                .withArguments('ProjectReport')
                 .build()
 
         then:
-        result.output.contains('Hello world!')
-        result.task(":greet").outcome == SUCCESS
+        result.output.contains('Project Name')
+        result.task(":ProjectReport").outcome == SUCCESS
 
-        where:
-        gradleVersion << ['7.x']
-    }
+         where:
+        gradleVersion << ['7.4']
+    }*/
 
+
+    /**
+     * Verify the plugin is findable
+     */
     @Test
-    void pluginRegistersGreetingTask() {
+    void pluginRegistersProjectReportTask() {
         // Create a test project and apply the plugin
-        Project project = ProjectBuilder.builder().build();
-        project.getPlugins().apply("com.projreport");
+        Project project = ProjectBuilder.builder().build()
+        project.getPlugins().apply("ProjectReport")
 
-        // Verify the result
-        assertNotNull(project.getTasks().findByName("producer"));
-        assertNotNull(project.getTasks().findByName("greeting"));
+        // Verify the resultProjectReport
+        assertNotNull(project.getTasks().findByName("ProjectReport"))
     }
 }
 

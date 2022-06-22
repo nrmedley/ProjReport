@@ -7,7 +7,6 @@ plugins {
     id 'project-report'
 }
 
-
 publishing{
     repositories {
         maven {
@@ -16,18 +15,11 @@ publishing{
     }
 }
 
-group 'com.projreport'
+group "com.projreport.plugin"
 version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-}
-htmlDependencyReport {
-    projects = project.allprojects
-}
-htmlDependencyReport {
-    reports.html.destination = file("build/reports/project/dependencies")
-
 }
 
 dependencies {
@@ -44,8 +36,8 @@ dependencies {
 gradlePlugin {
     // Define the plugin
     plugins {
-        projReportTasks {
-           id = 'com.projreport'
+        ProjReportPlugin {
+           id = 'ProjectReport'
             implementationClass = 'com.projreport.plugin.ProjReportPlugin'
         }
     }
@@ -55,21 +47,11 @@ test {
     useJUnitPlatform()
 }
 
-def functionalTest = sourceSets.create('functionalTest')
-def functionalTestTask = tasks.register('functionalTest', Test) {
-    group = 'verification'
-    testClassesDirs = sourceSets.functionalTest.output.classesDirs
-    classpath = sourceSets.functionalTest.runtimeClasspath
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
 }
 
-tasks.named("check") {
-    dependsOn functionalTestTask
-}
 
-gradlePlugin {
-    testSourceSets sourceSets.functionalTest
-}
 
 
 
